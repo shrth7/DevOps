@@ -1,8 +1,4 @@
 pipeline {
-    
-    environment{
-                NAME="imageagain"
-            }
     agent any
     stages{
         stage('Docker Version'){
@@ -18,7 +14,7 @@ pipeline {
         stage('Build Docker Image'){
             
             steps{
-                sh 'docker build -t ${env.NAME}:${BUILD_NUMBER} .'
+                sh 'docker build -t imageagain:${BUILD_NUMBER} .'
                 sh 'docker images'
             }
         }
