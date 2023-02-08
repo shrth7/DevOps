@@ -16,7 +16,7 @@ pipeline {
                 name="imageagain"
             }
             steps{
-                sh 'docker build -t env.name:${BUILD_NUMBER} .'
+                sh 'docker build -t ${env.name}:${BUILD_NUMBER} .'
                 sh 'docker images'
             }
         }
