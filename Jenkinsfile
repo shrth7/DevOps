@@ -13,10 +13,10 @@ pipeline {
         }
         stage('Build Docker Image'){
             environment{
-                name="imageagain"
+                NAME="imageagain"
             }
             steps{
-                sh 'docker build -t ${env.name}:${BUILD_NUMBER} .'
+                sh 'docker build -t ${env.NAME}:${BUILD_NUMBER} .'
                 sh 'docker images'
             }
         }
