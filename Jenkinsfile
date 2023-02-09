@@ -28,7 +28,7 @@ pipeline {
                 sh 'docker build -t imageagain${BUILD_NUMBER}:${BUILD_NUMBER} .'
                 sh 'docker images'
 //                 sh 'docker image inspect imageagain:18'
-                sh 'docker image prune -a $(-y)'
+                sh 'docker image prune --filter "until=6hrs"'
                 sh 'docker kill $(docker ps -q)'
                 sh 'docker rm $(docker ps -a -q)'
                 sh 'docker container ls'
