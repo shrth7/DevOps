@@ -3,6 +3,8 @@ pipeline {
     options{
         timestamps ()
         timeout(time: 10, unit: 'SECONDS')
+        skipDefaultCheckout() 
+//         env.PR_NUM != null
     }
     
     stages{
