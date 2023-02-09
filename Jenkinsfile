@@ -3,8 +3,8 @@ pipeline {
     options{
         timestamps ()
         timeout(time: 10, unit: 'SECONDS')
-//         skipDefaultCheckout() 
-//         buildDiscarder(logRotator(numToKeepStr: '10'))
+         skipDefaultCheckout() 
+         buildDiscarder(logRotator(numToKeepStr: '10'))
     }
     
     stages{
@@ -23,11 +23,13 @@ pipeline {
     }
         }
         stage('Build Docker Image'){
-//             hello
+
             steps{
                 sh 'docker build -t imageagain${BUILD_NUMBER}:${BUILD_NUMBER} .'
                 sh 'docker images'
-                sh 'docker image inspect imageagain:18'
+//                 sh 'docker image inspect imageagain:18'
+                sh 'docker image prune -a -y'
+                sh 'docker images'
             }
         }
         stage('deploy') {
