@@ -29,7 +29,7 @@ pipeline {
                 sh 'docker images'
 //                 sh 'docker image inspect imageagain:18'
                 sh 'docker image prune -a'
-                sh 'docker-compose down'
+                sh 'docker kill $(docker ps -q)'
                 sh 'docker container ls'
                 sh 'docker images'
             }
