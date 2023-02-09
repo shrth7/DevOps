@@ -34,7 +34,7 @@ pipeline {
             steps{
             retry(3){
                 
-                sh 'docker --version'
+                sh 'docker run -d --name container1 imageagain${BUILD_NUMBER}'
                 }
             }
         }      
