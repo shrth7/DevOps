@@ -4,6 +4,7 @@ pipeline {
         timestamps ()
         timeout(time: 1, unit: 'SECONDS')
     }
+    parallel{
     stages{
         stage('Docker Version'){
             steps{
@@ -15,6 +16,7 @@ pipeline {
                 sh 'git --version'
             }
         }
+    }
         stage('Build Docker Image'){
             
             steps{
