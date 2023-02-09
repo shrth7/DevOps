@@ -1,7 +1,7 @@
 pipeline {
     agent any
     options{
-        timestamps()
+        timestamps ()
         timeout(time: 2, unit: 'SECONDS')
     }
     stages{
@@ -26,7 +26,7 @@ pipeline {
             steps{
             retry(3){
                 
-                sh 'docker -version'
+                sh 'docker --version'
                 }
             }
         }      
