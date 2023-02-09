@@ -18,5 +18,20 @@ pipeline {
                 sh 'docker images'
             }
         }
+        stage('deploy-test') {
+           try {
+             steps{
+                sh 'docker -version'
+            }
+           } catch(error) {
+             echo "First build failed, let's retry if accepted"
+             retry(2) {
+                input "Retry the job ?"
+                steps{
+                sh 'docker -version'
+            }
+             }
+           }
+        }
     }
 }
