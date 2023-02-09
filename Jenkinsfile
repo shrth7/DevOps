@@ -6,6 +6,7 @@ pipeline {
     }
     
     stages{
+        stage("Checking versions"){
         parallel{
         stage('Docker Version'){
             steps{
@@ -18,6 +19,7 @@ pipeline {
             }
         }
     }
+        }
         stage('Build Docker Image'){
             
             steps{
