@@ -34,7 +34,7 @@ pipeline {
             steps{
             retry(3){
                 
-                sh 'docker run -d --name container1 imageagain44'
+                sh 'docker run -d --name container1 imageagain44:44'
                 }
             }
         }      
