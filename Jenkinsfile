@@ -4,7 +4,7 @@ pipeline {
         timestamps ()
         timeout(time: 10, unit: 'SECONDS')
         skipDefaultCheckout() 
-        buildDiscarder(logRotator(numToKeepStr: '30'))
+        buildDiscarder(logRotator(numToKeepStr: '10'))
     }
     
     stages{
