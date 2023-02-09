@@ -4,7 +4,7 @@ pipeline {
         timestamps ()
         timeout(time: 10, unit: 'SECONDS')
         skipDefaultCheckout() 
-//         env.PR_NUM != null
+        buildDiscarder(logRotator(numToKeepStr: '30'))
     }
     
     stages{
