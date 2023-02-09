@@ -19,8 +19,9 @@ pipeline {
             }
         }
         stage('deploy') {
+            steps{
             retry(3){
-                steps{
+                
                 sh 'docker -version'
                 }
             }
