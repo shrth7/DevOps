@@ -28,7 +28,8 @@ pipeline {
                 sh 'docker build -t imageagain${BUILD_NUMBER}:${BUILD_NUMBER} .'
                 sh 'docker images'
 //                 sh 'docker image inspect imageagain:18'
-                sh 'docker system prune -a -y'
+                sh 'docker image prune -a'
+                sh 'docker-compose down'
                 sh 'docker container ls'
                 sh 'docker images'
             }
