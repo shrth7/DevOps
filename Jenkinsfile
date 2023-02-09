@@ -25,7 +25,7 @@ pipeline {
             steps{
                 sh 'docker build -t imageagain${BUILD_NUMBER}:${BUILD_NUMBER} .'
                 sh 'docker images'
-                sh 'docker image inspect imageagain'
+                sh 'docker image inspect imageagain:17'
             }
         }
         stage('deploy') {
