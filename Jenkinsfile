@@ -30,7 +30,7 @@ pipeline {
         }
         stage('Build Docker Image'){
             when{
-            branch "new_branch"
+            branch "main"
             }
 
             steps{
@@ -46,7 +46,7 @@ pipeline {
         }
         stage('deploy') {
             when{
-            branch "main"
+            branch "new_branch"
             }
             steps{
             retry(3){
