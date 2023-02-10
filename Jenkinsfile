@@ -39,8 +39,8 @@ pipeline {
 //                 sh 'docker image inspect imageagain:18'
 //                  sh 'docker kill $(docker ps -q)'
                 sh 'docker rmi -f $(docker images -q)'
-                sh 'docker rm $(docker ps -a -q)'
-                sh 'docker container ls'
+//                 sh 'docker rm $(docker ps -a -q)'
+//                 sh 'docker container ls'
                 sh 'docker images'
             }
         }
