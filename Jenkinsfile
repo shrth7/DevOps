@@ -11,17 +11,17 @@ pipeline {
         stage("Checking versions"){
         parallel{
         stage('Docker Version'){
-            when{
-            branch "main"
-            }
+//             when{
+//             branch "main"
+//             }
             steps{
                 sh 'docker --version'
             }
         }
         stage('GIT Version'){
-            when{
-            branch "main"
-            }
+//             when{
+//             branch "main"
+//             }
             steps{
                 sh 'git --version'
             }
@@ -29,9 +29,9 @@ pipeline {
     }
         }
         stage('Build Docker Image'){
-            when{
-            branch "main"
-            }
+//             when{
+//             branch "main"
+//             }
 
             steps{
                 sh 'docker build -t imageagain${BUILD_NUMBER}:${BUILD_NUMBER} .'
@@ -45,9 +45,9 @@ pipeline {
             }
         }
         stage('deploy') {
-            when{
-            branch "new_branch"
-            }
+//             when{
+//             branch "new_branch"
+//             }
             steps{
             retry(3){
                 
